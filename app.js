@@ -6,10 +6,17 @@ $('td').one('click',function(){
 
     //check if there is any 3 in a row
     //check if the table is full
-    isFull();
-    //if full => restart the game
-    //to toggle to the next player
-    toggle();
+    if(isFull()) {
+        //if full => restart the game
+        reset();
+        
+    }
+    else{
+        //to toggle to the next player
+        toggle();
+    }
+
+    
 })
 
 //alternate between X and O
@@ -31,9 +38,14 @@ for (var td of allTd) {
     if (!$(td).html()) {
          return false;     
     }
-    else{
-        return true;
-    }
+    
 }
+return true
 }
 
+// reset the game functhion 
+function reset() {
+   $('td').empty()
+
+    
+}
